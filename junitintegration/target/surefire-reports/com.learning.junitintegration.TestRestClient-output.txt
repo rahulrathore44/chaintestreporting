@@ -1,0 +1,5 @@
+18:41:55.132 [main] DEBUG c.a.c.service.ChainPluginService - Found configuration entry chaintest.generator.email.enabled, will use chaintest.generator.email.class-name to resolve class
+18:41:55.139 [main] DEBUG c.a.c.service.ChainPluginService - Generator chaintest.generator.chainlp.enabled was not enabled. To enable, set property chaintest.generator.chainlp.enabled=true in your configuration
+18:41:55.139 [main] DEBUG c.a.c.service.ChainPluginService - Found configuration entry chaintest.generator.simple.enabled, will use chaintest.generator.simple.class-name to resolve class
+18:41:55.150 [main] DEBUG c.a.c.generator.FileGenerator - Loading template index.ftl for class class com.aventstack.chaintest.generator.ChainTestEmailGenerator with basePackagePath email/
+18:41:55.350 [main] DEBUG c.a.c.generator.FileGenerator - Loading template index.ftl for class class com.aventstack.chaintest.generator.ChainTestSimpleGenerator with basePackagePath simple

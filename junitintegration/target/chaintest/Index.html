@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Test Report</title>
+    <link href="https://cdn.jsdelivr.net/gh/anshooarora/chaintest/cdn/simple/chaintest-pkg.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <style></style>
+</head>
+
+<body data-bs-theme="dark">
+  <nav class="navbar border-bottom">
+    <div class="container d-flex justify-content-between">
+      <div>
+        <a class="navbar-brand" href="#">ChainTest</a>
+        <span class="ms-3 fs-6">JunitTestProject</span>
+      </div>
+      <div>
+        <span class="badge badge-outline text-lg"><i class="bi bi-hourglass me-1"></i> 2s</span>
+        <span class="badge badge-outline text-lg"><i class="bi bi-clock me-1"></i> Started 2025-01-13 06:41:55 PM</span>
+        <span class="badge badge-outline text-lg"><i class="bi bi-clock me-1"></i> Ended 2025-01-13 06:41:57 PM</span>
+      </div>
+      <div>
+          <button role="button" id="sys-info" class="btn btn-outline-primary smaller" title="View System Info">
+            <i class="bi bi-pc-display-horizontal"></i></button>
+        <button role="button" id="shortcuts" class="btn btn-outline-primary smaller" title="Shortcuts">
+            <i class="bi bi-info-circle"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <div id="summary" class="container-fluid bg-body-tertiary">
+    <!-- dashboard section -->
+    <div id="dashboard" class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+            <div class="card card-custom" style="height: 175px">
+              <div class="card-header">
+                Classes
+              </div>
+              <div class="card-body d-flex justify-content-center" style="height: 90px;">
+                <div class="chart-view center" style="margin-left: -1rem;">
+                  <canvas id="stats1"></canvas>
+                </div>
+              </div>
+              <div class="card-footer small">
+                  2 Passed,
+                  0 Failed,
+                  0 Skipped
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card card-custom" style="height: 175px">
+              <div class="card-header">
+                Methods
+              </div>
+              <div class="card-body d-flex justify-content-center" style="height: 90px;">
+                <div class="chart-view center" style="margin-left: -1rem;">
+                  <canvas id="stats2"></canvas>
+                </div>
+              </div>
+              <div class="card-footer small">
+                  5 Passed,
+                  0 Failed,
+                  0 Skipped
+              </div>
+            </div>
+          </div>
+              <div class="col-4">
+                <div class="card card-custom" style="height: 175px">
+                  <div class="card-header mb-2">
+                    Summary
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col text-center">
+                        <label class="fs-10">Started</label>
+                        <p class="fw-semibold mb-0">
+                          2025-01-13 06:41:55 PM
+                        </p>
+                      </div>
+                      <div class="col border-start text-center">
+                        <label class="fs-10">Ended</label>
+                        <p class="fw-semibold mb-0">2025-01-13 06:41:57 PM
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                        <div class="progress" role="progressbar" aria-label="Success example"
+                          aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                          <div class="progress-bar bg-success" style="width: 100%">100%</div>
+                        </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+    <!-- /dashboard section -->
+
+    <!-- tag section -->
+      <div id="tags" class="container pb-5">
+        <div class="card card-custom">
+          <div class="card-header">
+            Tags
+          </div>
+          <div class="card-body">
+            <table id="tag-summary" class="table">
+              <thead>
+                <tr>
+                  <th scope="col" style="width:65%"></th>
+                  <th scope="col">Total</th>
+                  <th scope="col">Passed</th>
+                  <th scope="col">Failed</th>
+                  <th scope="col">Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><a href="#" class="secondary tag">regression</a></td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>26ms</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="secondary tag">smoke</a></td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>490ms</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="secondary tag">integration</a></td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>26ms</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="border-bottom"></div>
+    <!-- /tag section -->
+  </div>
+
+  <div class="container-fluid">
+    <div class="border-bottom py-3 mb-5">
+      <div class="container d-flex justify-content-between">
+        <div id="status-filter" aria-label="Filter tests with status">
+          <button type="button" id="passed" class="btn btn-outline-success btn-sm">Passed</button>
+          <button type="button" id="skipped" class="btn btn-outline-warning btn-sm">Skipped</button>
+          <button type="button" id="failed" class="btn btn-outline-danger btn-sm">Failed</button>
+          <button id="clear-filters" class="btn btn-outline-secondary btn-sm">
+            <i class="bi bi-x-lg me-1"></i>Clear all filters</button>
+        </div>
+        <div>
+          <button type="button" id="summary-toggle" class="btn btn-outline-primary btn-sm">Toggle Summary Section</button>
+        </div>
+      </div>
+    </div>
+      <div class="test-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-4">
+              <h6 class="mb-3 testname passed">TestRestClient</h6>
+              <div class="small">
+                <span class="badge badge-outline"><i class="bi bi-hourglass me-1"></i> 490ms</span>
+                <span class="badge text-bg-info"><i class="bi bi-clock me-1"></i>
+                  2025-01-13 06:41:56 PM</span>
+                <span class="badge text-bg-warning"><i class="bi bi-clock me-1"></i>
+                  2025-01-13 06:41:56 PM</span>
+              </div>
+                <div class="my-2">
+                    <span class="badge rounded-pill text-bg-secondary">smoke</span>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="card mb-1 result passed">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <div>
+                          <i class="bi bi-check-circle-fill text-success"></i>
+                        <span class="ms-2">testForSuccessFullResponse()</span>
+                      </div>
+                      <div>
+                          <span class="tag-list">
+                              <span class="badge rounded-pill text-bg-secondary">smoke</span>
+                          </span>
+                          <span class="mx-1">&middot;</span>
+                        <span class="badge text-dark bg-light">471ms</span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="card mb-1 result passed">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <div>
+                          <i class="bi bi-check-circle-fill text-success"></i>
+                        <span class="ms-2">failedTest()</span>
+                      </div>
+                      <div>
+                          <span class="tag-list">
+                              <span class="badge rounded-pill text-bg-secondary">smoke</span>
+                          </span>
+                          <span class="mx-1">&middot;</span>
+                        <span class="badge text-dark bg-light">0ms</span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+            <div class="border-bottom my-5"></div>
+      </div>
+      <div class="test-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-4">
+              <h6 class="mb-3 testname passed">TestRestClientErrorCase</h6>
+              <div class="small">
+                <span class="badge badge-outline"><i class="bi bi-hourglass me-1"></i> 26ms</span>
+                <span class="badge text-bg-info"><i class="bi bi-clock me-1"></i>
+                  2025-01-13 06:41:57 PM</span>
+                <span class="badge text-bg-warning"><i class="bi bi-clock me-1"></i>
+                  2025-01-13 06:41:57 PM</span>
+              </div>
+                <div class="my-2">
+                    <span class="badge rounded-pill text-bg-secondary">regression</span>
+                    <span class="badge rounded-pill text-bg-secondary">integration</span>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="card mb-1 result passed">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <div>
+                          <i class="bi bi-check-circle-fill text-success"></i>
+                        <span class="ms-2">testForBadRequestResponse()</span>
+                      </div>
+                      <div>
+                          <span class="tag-list">
+                              <span class="badge rounded-pill text-bg-secondary">regression</span>
+                              <span class="badge rounded-pill text-bg-secondary">integration</span>
+                          </span>
+                          <span class="mx-1">&middot;</span>
+                        <span class="badge text-dark bg-light">15ms</span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="card mb-1 result passed">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <div>
+                          <i class="bi bi-check-circle-fill text-success"></i>
+                        <span class="ms-2">testForNotFoundResponse()</span>
+                      </div>
+                      <div>
+                          <span class="tag-list">
+                              <span class="badge rounded-pill text-bg-secondary">regression</span>
+                              <span class="badge rounded-pill text-bg-secondary">integration</span>
+                          </span>
+                          <span class="mx-1">&middot;</span>
+                        <span class="badge text-dark bg-light">4ms</span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="card mb-1 result passed">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <div>
+                          <i class="bi bi-check-circle-fill text-success"></i>
+                        <span class="ms-2">testForInternalServerErrorResponse()</span>
+                      </div>
+                      <div>
+                          <span class="tag-list">
+                              <span class="badge rounded-pill text-bg-secondary">regression</span>
+                              <span class="badge rounded-pill text-bg-secondary">integration</span>
+                          </span>
+                          <span class="mx-1">&middot;</span>
+                        <span class="badge text-dark bg-light">3ms</span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+          <div class="border-bottom py-5"></div>
+      </div>
+  </div>
+
+  <script>
+    const stats1Annotation = {'total': 2, 'passed': 2};
+    const stats1 = [
+      { result: 'Passed', count: 2, bg: 'rgb(140, 197, 83)' },
+      { result: 'Failed', count: 0, bg: 'rgb(233,80,113)' },
+      { result: 'Skipped', count: 0, bg: 'rgb(221, 91, 96)' }
+    ];
+    const stats2Annotation = {'total': 5, 'passed': 5};
+    const stats2 = [
+      { result: 'Passed', count: 5, bg: 'rgb(140, 197, 83)' },
+      { result: 'Failed', count: 0, bg: 'rgb(233,80,113)' },
+      { result: 'Skipped', count: 0, bg: 'rgb(221, 91, 96)' }
+    ];
+      const stats3 = null;
+     
+  </script>
+    <script src="https://cdn.jsdelivr.net/gh/anshooarora/chaintest/cdn/simple/chaintest-pkg.js"></script>
+
+    <div id="sys-info-modal" class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h6 class="modal-title">System</h6>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+              onclick="toggleSysInfo(false)"></button>
+          </div>
+          <div class="modal-body">
+            <table class="table">
+              <tbody>
+                  <tr>
+                    <td>java.version</td>
+                    <td>17.0.5</td>
+                  </tr>
+                  <tr>
+                    <td>java.vm.name</td>
+                    <td>Java HotSpot(TM) 64-Bit Server VM</td>
+                  </tr>
+                  <tr>
+                    <td>java.vm.vendor</td>
+                    <td>Oracle Corporation</td>
+                  </tr>
+                  <tr>
+                    <td>java.class.version</td>
+                    <td>61.0</td>
+                  </tr>
+                  <tr>
+                    <td>java.runtime.name</td>
+                    <td>Java(TM) SE Runtime Environment</td>
+                  </tr>
+                  <tr>
+                    <td>os.name</td>
+                    <td>Linux</td>
+                  </tr>
+                  <tr>
+                    <td>os.arch</td>
+                    <td>amd64</td>
+                  </tr>
+                  <tr>
+                    <td>os.version</td>
+                    <td>4.15.0-213-generic</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+              onclick="toggleSysInfo(false)">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div id="info-modal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title">ChainTest Simple Generator - Shortcuts</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            onclick="toggleInfoModal(false)"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <tbody>
+                <tr>
+                  <td>s</td>
+                  <td>Toggle skipped tests</td>
+                </tr>
+                <tr>
+                  <td>p</td>
+                  <td>Toggle passed tests</td>
+                </tr>
+                <tr>
+                  <td>f</td>
+                  <td>Toggle failed tests</td>
+                </tr>
+                <tr>
+                  <td>esc</td>
+                  <td>Reset all filters</td>
+                </tr>
+                <tr>
+                  <td>L</td>
+                  <td>Toggle theme (light/dark)</td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+            onclick="toggleInfoModal(false)">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="attachment-modal" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title">Attachment</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            onclick="toggleAttachmentModal(false)"></button>
+        </div>
+        <div class="modal-body">
+          <img src="" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+            onclick="toggleAttachmentModal(false)">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
