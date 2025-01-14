@@ -16,12 +16,12 @@
     <div class="container d-flex justify-content-between">
       <div>
         <a class="navbar-brand" href="#">ChainTest</a>
-        <span class="ms-3 fs-6">JunitTestProject</span>
+        <span class="ms-3 fs-6">TestNgTestProject</span>
       </div>
       <div>
         <span class="badge badge-outline text-lg"><i class="bi bi-hourglass me-1"></i> 1s</span>
-        <span class="badge badge-outline text-lg"><i class="bi bi-clock me-1"></i> Started 2025-01-14 03:55:19 PM</span>
-        <span class="badge badge-outline text-lg"><i class="bi bi-clock me-1"></i> Ended 2025-01-14 03:55:20 PM</span>
+        <span class="badge badge-outline text-lg"><i class="bi bi-clock me-1"></i> Started 2025-01-14 03:55:21 PM</span>
+        <span class="badge badge-outline text-lg"><i class="bi bi-clock me-1"></i> Ended 2025-01-14 03:55:23 PM</span>
       </div>
       <div>
           <button role="button" id="sys-info" class="btn btn-outline-primary smaller" title="View System Info">
@@ -40,7 +40,7 @@
           <div class="col-4">
             <div class="card card-custom" style="height: 175px">
               <div class="card-header">
-                Classes
+                Suites
               </div>
               <div class="card-body d-flex justify-content-center" style="height: 90px;">
                 <div class="chart-view center" style="margin-left: -1rem;">
@@ -48,16 +48,16 @@
                 </div>
               </div>
               <div class="card-footer small">
-                  2 Passed,
-                  0 Failed,
-                  0 Skipped
+                1 Passed,
+                0 Failed,
+                0 Skipped
               </div>
             </div>
           </div>
           <div class="col-4">
             <div class="card card-custom" style="height: 175px">
               <div class="card-header">
-                Methods
+                Classes
               </div>
               <div class="card-body d-flex justify-content-center" style="height: 90px;">
                 <div class="chart-view center" style="margin-left: -1rem;">
@@ -65,40 +65,29 @@
                 </div>
               </div>
               <div class="card-footer small">
-                  5 Passed,
-                  0 Failed,
-                  0 Skipped
+                2 Passed,
+                0 Failed,
+                0 Skipped
               </div>
             </div>
           </div>
-              <div class="col-4">
-                <div class="card card-custom" style="height: 175px">
-                  <div class="card-header mb-2">
-                    Summary
-                  </div>
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col text-center">
-                        <label class="fs-10">Started</label>
-                        <p class="fw-semibold mb-0">
-                          2025-01-14 03:55:19 PM
-                        </p>
-                      </div>
-                      <div class="col border-start text-center">
-                        <label class="fs-10">Ended</label>
-                        <p class="fw-semibold mb-0">2025-01-14 03:55:20 PM
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-footer">
-                        <div class="progress" role="progressbar" aria-label="Success example"
-                          aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                          <div class="progress-bar bg-success" style="width: 100%">100%</div>
-                        </div>
+            <div class="col-4">
+              <div class="card card-custom" style="height: 175px">
+                <div class="card-header">
+                  Methods
+                </div>
+                <div class="card-body d-flex justify-content-center" style="height: 90px;">
+                  <div class="chart-view center" style="margin-left: -1rem;">
+                    <canvas id="stats3"></canvas>
                   </div>
                 </div>
+                <div class="card-footer small">
+                  5 Passed,
+                  0 Failed,
+                  0 Skipped
+                </div>
               </div>
+            </div>
         </div>
       </div>
     </div>
@@ -127,21 +116,14 @@
                     <td>1</td>
                     <td>1</td>
                     <td>0</td>
-                    <td>23ms</td>
-                  </tr>
-                  <tr>
-                    <td><a href="#" class="secondary tag">smoke</a></td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>171ms</td>
+                    <td>630ms</td>
                   </tr>
                   <tr>
                     <td><a href="#" class="secondary tag">integration</a></td>
                     <td>1</td>
                     <td>1</td>
                     <td>0</td>
-                    <td>23ms</td>
+                    <td>630ms</td>
                   </tr>
               </tbody>
             </table>
@@ -171,71 +153,13 @@
         <div class="container">
           <div class="row">
             <div class="col-4">
-              <h6 class="mb-3 testname passed">TestRestClient</h6>
+              <h6 class="mb-3 testname passed">Regression Suite</h6>
               <div class="small">
-                <span class="badge badge-outline"><i class="bi bi-hourglass me-1"></i> 171ms</span>
+                <span class="badge badge-outline"><i class="bi bi-hourglass me-1"></i> 630ms</span>
                 <span class="badge text-bg-info"><i class="bi bi-clock me-1"></i>
-                  2025-01-14 03:55:20 PM</span>
+                  2025-01-14 03:55:22 PM</span>
                 <span class="badge text-bg-warning"><i class="bi bi-clock me-1"></i>
-                  2025-01-14 03:55:20 PM</span>
-              </div>
-                <div class="my-2">
-                    <span class="badge rounded-pill text-bg-secondary">smoke</span>
-                </div>
-            </div>
-            <div class="col-8">
-                <div class="card mb-1 result passed">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                      <div>
-                          <i class="bi bi-check-circle-fill text-success"></i>
-                        <span class="ms-2">testForSuccessFullResponse()</span>
-                      </div>
-                      <div>
-                          <span class="tag-list">
-                              <span class="badge rounded-pill text-bg-secondary">smoke</span>
-                          </span>
-                          <span class="mx-1">&middot;</span>
-                        <span class="badge text-dark bg-light">159ms</span>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-                <div class="card mb-1 result passed">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                      <div>
-                          <i class="bi bi-check-circle-fill text-success"></i>
-                        <span class="ms-2">failedTest()</span>
-                      </div>
-                      <div>
-                          <span class="tag-list">
-                              <span class="badge rounded-pill text-bg-secondary">smoke</span>
-                          </span>
-                          <span class="mx-1">&middot;</span>
-                        <span class="badge text-dark bg-light">0ms</span>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-            </div>
-          </div>
-        </div>
-            <div class="border-bottom my-5"></div>
-      </div>
-      <div class="test-container">
-        <div class="container">
-          <div class="row">
-            <div class="col-4">
-              <h6 class="mb-3 testname passed">TestRestClientErrorCase</h6>
-              <div class="small">
-                <span class="badge badge-outline"><i class="bi bi-hourglass me-1"></i> 23ms</span>
-                <span class="badge text-bg-info"><i class="bi bi-clock me-1"></i>
-                  2025-01-14 03:55:20 PM</span>
-                <span class="badge text-bg-warning"><i class="bi bi-clock me-1"></i>
-                  2025-01-14 03:55:20 PM</span>
+                  2025-01-14 03:55:22 PM</span>
               </div>
                 <div class="my-2">
                     <span class="badge rounded-pill text-bg-secondary">regression</span>
@@ -248,17 +172,32 @@
                     <div class="d-flex justify-content-between">
                       <div>
                           <i class="bi bi-check-circle-fill text-success"></i>
-                        <span class="ms-2">testForBadRequestResponse()</span>
+                        <span class="ms-2">com.learning.testngintegration.TestRestClient</span>
                       </div>
                       <div>
-                          <span class="tag-list">
-                              <span class="badge rounded-pill text-bg-secondary">regression</span>
-                              <span class="badge rounded-pill text-bg-secondary">integration</span>
-                          </span>
-                          <span class="mx-1">&middot;</span>
-                        <span class="badge text-dark bg-light">12ms</span>
+                        <span class="badge text-dark bg-light">549ms</span>
                       </div>
                     </div>
+  <div class="mt-3 border-top">
+        <div class="d-flex justify-content-between mt-3">
+          <div>
+              <i class="bi bi-check-circle-fill text-success"></i>
+            <span class="ms-2">failedTest</span>
+          </div>
+          <div>
+            <span class="badge text-dark bg-light">2ms</span>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between mt-3">
+          <div>
+              <i class="bi bi-check-circle-fill text-success"></i>
+            <span class="ms-2">testForSuccessFullResponse</span>
+          </div>
+          <div>
+            <span class="badge text-dark bg-light">143ms</span>
+          </div>
+        </div>
+  </div>
 
                   </div>
                 </div>
@@ -267,7 +206,7 @@
                     <div class="d-flex justify-content-between">
                       <div>
                           <i class="bi bi-check-circle-fill text-success"></i>
-                        <span class="ms-2">testForNotFoundResponse()</span>
+                        <span class="ms-2">com.learning.testngintegration.TestRestClientErrorCase</span>
                       </div>
                       <div>
                           <span class="tag-list">
@@ -275,28 +214,43 @@
                               <span class="badge rounded-pill text-bg-secondary">integration</span>
                           </span>
                           <span class="mx-1">&middot;</span>
-                        <span class="badge text-dark bg-light">4ms</span>
+                        <span class="badge text-dark bg-light">29ms</span>
                       </div>
                     </div>
-
-                  </div>
-                </div>
-                <div class="card mb-1 result passed">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                      <div>
-                          <i class="bi bi-check-circle-fill text-success"></i>
-                        <span class="ms-2">testForInternalServerErrorResponse()</span>
-                      </div>
-                      <div>
-                          <span class="tag-list">
-                              <span class="badge rounded-pill text-bg-secondary">regression</span>
-                              <span class="badge rounded-pill text-bg-secondary">integration</span>
-                          </span>
-                          <span class="mx-1">&middot;</span>
-                        <span class="badge text-dark bg-light">3ms</span>
-                      </div>
-                    </div>
+  <div class="mt-3 border-top">
+        <div class="d-flex justify-content-between mt-3">
+          <div>
+              <i class="bi bi-check-circle-fill text-success"></i>
+            <span class="ms-2">testForBadRequestResponse</span>
+          </div>
+          <div>
+            <span class="badge text-dark bg-light">5ms</span>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between mt-3">
+          <div>
+              <i class="bi bi-check-circle-fill text-success"></i>
+            <span class="ms-2">testForInternalServerErrorResponse</span>
+          </div>
+          <div>
+            <span class="badge text-dark bg-light">4ms</span>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between mt-3">
+          <div>
+              <i class="bi bi-check-circle-fill text-success"></i>
+            <span class="ms-2">testForNotFoundResponse</span>
+          </div>
+          <div>
+              <span class="tag-list">
+                  <span class="badge rounded-pill text-bg-secondary">regression</span>
+                  <span class="badge rounded-pill text-bg-secondary">integration</span>
+              </span>
+              <span class="mx-1">&middot;</span>
+            <span class="badge text-dark bg-light">3ms</span>
+          </div>
+        </div>
+  </div>
 
                   </div>
                 </div>
@@ -308,19 +262,24 @@
   </div>
 
   <script>
-    const stats1Annotation = {'total': 2, 'passed': 2};
+    const stats1Annotation = {'total': 1, 'passed': 1};
     const stats1 = [
-      { result: 'Passed', count: 2, bg: 'rgb(140, 197, 83)' },
+      { result: 'Passed', count: 1, bg: 'rgb(140, 197, 83)' },
       { result: 'Failed', count: 0, bg: 'rgb(233,80,113)' },
       { result: 'Skipped', count: 0, bg: 'rgb(221, 91, 96)' }
     ];
-    const stats2Annotation = {'total': 5, 'passed': 5};
-    const stats2 = [
-      { result: 'Passed', count: 5, bg: 'rgb(140, 197, 83)' },
-      { result: 'Failed', count: 0, bg: 'rgb(233,80,113)' },
-      { result: 'Skipped', count: 0, bg: 'rgb(221, 91, 96)' }
-    ];
-      const stats3 = null;
+      const stats2Annotation = {'total': 2, 'passed': 2};
+      const stats2 = [
+        { result: 'Passed', count: 2, bg: 'rgb(140, 197, 83)' },
+        { result: 'Failed', count: 0, bg: 'rgb(233,80,113)' },
+        { result: 'Skipped', count: 0, bg: 'rgb(221, 91, 96)' }
+      ];
+      const stats3Annotation = {'total': 5, 'passed': 5};
+      const stats3 = [
+        { result: 'Passed', count: 5, bg: 'rgb(140, 197, 83)' },
+        { result: 'Failed', count: 0, bg: 'rgb(233,80,113)' },
+        { result: 'Skipped', count: 0, bg: 'rgb(221, 91, 96)' }
+      ];
      
   </script>
     <script src="https://cdn.jsdelivr.net/gh/anshooarora/chaintest/cdn/simple/chaintest-pkg.js"></script>
@@ -391,24 +350,24 @@
           <table class="table">
             <tbody>
                 <tr>
-                  <td>s</td>
-                  <td>Toggle skipped tests</td>
+                  <td>f</td>
+                  <td>Toggle failed tests</td>
                 </tr>
                 <tr>
                   <td>p</td>
                   <td>Toggle passed tests</td>
                 </tr>
                 <tr>
-                  <td>f</td>
-                  <td>Toggle failed tests</td>
-                </tr>
-                <tr>
-                  <td>esc</td>
-                  <td>Reset all filters</td>
+                  <td>s</td>
+                  <td>Toggle skipped tests</td>
                 </tr>
                 <tr>
                   <td>L</td>
                   <td>Toggle theme (light/dark)</td>
+                </tr>
+                <tr>
+                  <td>esc</td>
+                  <td>Reset all filters</td>
                 </tr>
             </tbody>
           </table>

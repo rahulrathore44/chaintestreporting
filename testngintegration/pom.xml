@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>chaintestreporting</artifactId>
+        <groupId>com.learning</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.learning</groupId>
-    <artifactId>chaintestreporting</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>junitintegration</module>
-        <module>testngintegration</module>
-    </modules>
+    <artifactId>testngintegration</artifactId>
+    <packaging>jar</packaging>
+
+    <name>testngintegration</name>
+    <url>http://maven.apache.org</url>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -28,10 +28,13 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>3.5.2</version>
                     <configuration>
-                        <reportsDirectory>target/surefire-reports</reportsDirectory>
+                        <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
                         <testFailureIgnore>true</testFailureIgnore>
                         <reportFormat>brief</reportFormat>
                         <redirectTestOutputToFile>true</redirectTestOutputToFile>
+                        <suiteXmlFiles>
+                            <suiteXmlFile>${project.build.testSourceDirectory}/testng.xml</suiteXmlFile>
+                        </suiteXmlFiles>
                     </configuration>
                 </plugin>
             </plugins>
@@ -40,23 +43,23 @@
 
     <dependencies>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5-fluent -->
+        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
-            <groupId>org.apache.httpcomponents.client5</groupId>
-            <artifactId>httpclient5-fluent</artifactId>
-            <version>5.4</version>
-        </dependency>
-
-
-        <!-- https://mvnrepository.com/artifact/org.wiremock/wiremock -->
-        <dependency>
-            <groupId>org.wiremock</groupId>
-            <artifactId>wiremock</artifactId>
-            <version>3.10.0</version>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.10.1</version>
             <scope>test</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.aventstack/chaintest-testng -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>chaintest-testng</artifactId>
+            <version>1.0.4</version>
+        </dependency>
+
+
+
 
     </dependencies>
-
 </project>
