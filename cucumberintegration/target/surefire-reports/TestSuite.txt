@@ -1,0 +1,15 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 8.315 s <<< FAILURE! -- in TestSuite
+com.learning.runner.BugZillaRunner.runScenario["To launch the BugZilla and verify the page title", "To test the login scenario of BugZilla"](1) -- Time elapsed: 5.586 s <<< FAILURE!
+java.lang.AssertionError: expected [Bugzilla – Main Page] but found [Log in to Bugzilla]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at com.learning.stepdfn.StepDefinition.page_should_be_open_wth_title(StepDefinition.java:40)
+	at ✽.Page should be open wth title "Bugzilla – Main Page"(file:///home/vagrant/nirvana/chaintestreporting/cucumberintegration/src/test/resources/features/BgzillaAutomation.feature:8)
+

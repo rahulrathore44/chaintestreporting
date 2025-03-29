@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-03-29T10:03:10 UTC" name="Regression Suite" finished-at="2025-03-29T10:03:18 UTC" duration-ms="7571">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.learning.runner.BugZillaRunner@1c9b0314]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2025-03-29T10:03:10 UTC" name="Test Group" finished-at="2025-03-29T10:03:18 UTC" duration-ms="7571">
+      <class name="com.learning.runner.BugZillaRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.learning.runner.BugZillaRunner@1c9b0314]" started-at="2025-03-29T10:03:10 UTC" name="setUpClass" finished-at="2025-03-29T10:03:11 UTC" duration-ms="1261" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@102c18e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.learning.runner.BugZillaRunner@1c9b0314]" started-at="2025-03-29T10:03:11 UTC" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-03-29T10:03:17 UTC" duration-ms="5583" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To launch the BugZilla and verify the page title"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["To test the login scenario of BugZilla"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Bugzilla – Main Page] but found [Log in to Bugzilla]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Bugzilla – Main Page] but found [Log in to Bugzilla]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at org.testng.Assert.assertEquals(Assert.java:666)
+at com.learning.stepdfn.StepDefinition.page_should_be_open_wth_title(StepDefinition.java:40)
+at ✽.Page should be open wth title "Bugzilla – Main Page"(file:///home/vagrant/nirvana/chaintestreporting/cucumberintegration/src/test/resources/features/BgzillaAutomation.feature:8)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.learning.runner.BugZillaRunner@1c9b0314]" started-at="2025-03-29T10:03:17 UTC" name="tearDownClass" finished-at="2025-03-29T10:03:18 UTC" duration-ms="684" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.learning.runner.BugZillaRunner -->
+    </test> <!-- Test Group -->
+  </suite> <!-- Regression Suite -->
+</testng-results>

@@ -9,7 +9,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="junitintegration" />
         <module name="testngintegration" />
+        <module name="cucumberintegration" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cucuberintegration" target="17" />
+      <module name="cucumberintergration" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

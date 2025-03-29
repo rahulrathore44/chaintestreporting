@@ -11,6 +11,7 @@
     <modules>
         <module>junitintegration</module>
         <module>testngintegration</module>
+        <module>cucumberintegration</module>
     </modules>
 
     <properties>
